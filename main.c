@@ -47,7 +47,7 @@ int main(void) {
     scanf("%i", &i);
     printf("Digite a coluna para adicionar o elemento: ");
     scanf("%i", &j);
-    if (i > N || j > N){
+    if (i >= N || j >= N){
     printf("Coluna o Linha não existe\n");
     }
     if (matriz[i][j] != 0){
