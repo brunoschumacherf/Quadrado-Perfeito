@@ -5,7 +5,7 @@
 int main(void) {
   int N, **matriz, i, j, *vetor, contvetor = 1, soma = 0, result = 0, generated_number, total_matrix = 0, first_sum = 0, coluna, linha;
   matriz = malloc(N * sizeof(int *));
-  vetor = malloc(N * sizeof(int));
+  vetor = malloc((N * 2 + 1) * sizeof(int));
 
   printf("Digite o tamanho da matriz: ");
   scanf("%i", &N);
