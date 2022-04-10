@@ -47,18 +47,24 @@ int main(void) {
     scanf("%i", &i);
     printf("Digite a coluna para adicionar o elemento: ");
     scanf("%i", &j);
-    if (i >= N || j >= N){
-    printf("Coluna o Linha não existe\n");
-    }
-    if (matriz[i][j] != 0){
+    if(i >= N || j >= N){
       system("clear");
-      printf("Local já preenchido. Tente Novamente\n");
+      printf("---- Coluna ou Linha não existe ---- \n");
     }else{
-      printf("Digite o elemento: ");
-      scanf("%i", &matriz[i][j]);
-      total_matrix++;
-      system("clear");
-      printf("Elemento Adicionado\n");
+      if(matriz[i][j] != 0){
+        system("clear");
+        printf("---- Local já preenchido. Tente Novamente ----\n");
+      }else{
+        printf("Digite o elemento: ");
+        scanf("%i", &matriz[i][j]);
+        system("clear");
+        if(matriz[i][j] == 0){
+          printf("---- 0 não pode ser adicionado ----\n");
+        }else{
+          total_matrix++;
+          printf("---- Elemento Adicionado-----\n");
+        }
+      }
     }
   }
   // For de teste para matriz grande
@@ -92,9 +98,9 @@ int main(void) {
     }
   }
   if (result == N + N){
-    printf("Quadrado Perfeito");
+    printf("Quadrado Perfeito\n");
   }else{
-    printf("Quadrado não Perfeito");
+    printf("Quadrado não Perfeito\n");
   }
   for(i = 0; i < N; i++){
     free(matriz[i]);
